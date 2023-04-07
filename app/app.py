@@ -14,20 +14,9 @@ from torchvision import transforms
 from utils.model import ResNet9
 
 
-
-
-
-
-
-
-
 crop_recommendation_model_path = 'models/RandomForest.pkl'
 crop_recommendation_model = pickle.load(
     open(crop_recommendation_model_path, 'rb'))
-
-
-
-
 
 def weather_fetch(city_name):
     """
