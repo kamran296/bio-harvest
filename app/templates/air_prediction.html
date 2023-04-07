@@ -1,0 +1,180 @@
+{% extends 'layout.html' %} {% block body %}
+
+<style>
+
+    html body {
+      background-color: rgb(206, 206, 228);
+
+      
+  }
+
+  
+</style>
+<!--Form Section-->
+<br /><br />
+<h2 style="text-align: center; margin: 0px; color: black">
+  <b>Find out the most suitable crop to grow in your farm</b>
+</h2>
+<br />
+
+<div
+  style="
+    width: 350px;
+    height: 50rem;
+    margin: 0px auto;
+    color: black;
+    border-radius: 25px;
+    padding: 10px 10px;
+  "
+>
+  <form method="POST" action="{{ url_for('air_prediction') }}">
+    <div class="form-group">
+      <label for="T" style="font-size: 17px"><b>Average annual temperature</b></label>
+      <input
+        type="number"
+        class="form-control"
+        id="T"
+        name="T"
+        placeholder="Average annual temperature"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="TM" style="font-size: 17px"
+        ><b>Average annual maximum temperature</b></label
+      >
+      <input
+        type="number"
+        class="form-control"
+        id="TM"
+        name="TM"
+        placeholder="Average annual maximum temperature"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="Tm" style="font-size: 17px"><b>Average annual minimum temperature</b></label>
+      <input
+        type="number"
+        class="form-control"
+        id="Tm"
+        name="Tm"
+        placeholder="Average annual minimum temperature"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="SLP" style="font-size: 17px"><b>ph levelnumber of foggy days</b></label>
+      <input
+        type="number"
+        
+        class="form-control"
+        id="SLP"
+        name="SLP"
+        placeholder="number of foggy days"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+    
+    <div class="form-group">
+      <label for="H" style="font-size: 17px"><b>number of days with tornado</b></label>
+      <input
+        type="number"
+        step="0.01"
+        class="form-control"
+        id="H"
+        name="H"
+        placeholder="number of days with tornado"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+        <label for="VV" style="font-size: 17px"><b>number of foggy days</b></label>
+        <input
+          type="number"
+          
+          class="form-control"
+          id="VV"
+          name="VV"
+          placeholder="number of foggy days1"
+          style="font-weight: bold"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="V" style="font-size: 17px">number of days with snow</label>
+        <input
+          type="number"
+          
+          class="form-control"
+          id="V"
+          name="V"
+          placeholder="number of days with snow"
+          style="font-weight: bold"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="VM" style="font-size: 17px"><b>average annual wind speed</b></label>
+        <input
+          type="number"
+          
+          class="form-control"
+          id="VM"
+          name="VM"
+          placeholder="average annual wind speed"
+          style="font-weight: bold"
+          required
+        />
+      </div>
+
+    <!-- <div class="form-group">
+      <label for="State" style="font-size: 17px "><b>State</b></label>
+      <select
+        onchange="print_city('state', this.selectedIndex);"
+        id="sts"
+        name="stt"
+        class="form-control"
+        style="font-weight: bold; color: black;"
+        
+        required
+      ></select>
+      <br />
+      <label for="City" style="font-size: 17px"><b>City</b></label>
+      <select
+        id="state"
+        class="form-control"
+        name="city"
+        style="font-weight: bold; color: black;"
+        required
+      ></select>
+      <script language="javascript">
+        print_state("sts");
+      </script>
+    </div> -->
+
+    <div class="d-flex justify-content-center">
+      <button
+        type="submit"
+        class="btn btn-info"
+        style="color: black; font-weight: bold; width: 130px; height:50px; border-radius:12px; font-size: 21px;"
+      >
+        Predict
+      </button>
+    </div>
+  </form>
+</div>
+
+
+
+<!-- Form section -->
+
+{% endblock %}
